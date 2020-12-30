@@ -1,0 +1,72 @@
+{
+	"name": "mk5code",
+	"version": "1.2.0",
+	"description": "Boilerplate mk5code",
+	"main": "src/app.ts",
+	"scripts": {
+		"build": "tsc",
+		"start": "nodemon",
+		"lint": "npm run lint:js ",
+		"lint:eslint": "eslint --ignore-path .gitignore --ext .ts",
+		"lint:js": "npm run lint:eslint src/",
+		"lint:fix": "npm run lint:js -- --fix",
+		"precommit-msg": "echo 'Pre-commit checks...' && exit 0"
+	},
+	"pre-commit": [
+		"precommit-msg",
+		"lint"
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://gitlab.com/mk5tech/mk5code-nodejs-architecture.git"
+	},
+	"keywords": [
+		"js",
+		"javascript",
+		"typescript",
+		"node",
+		"express"
+	],
+	"author": "Mayank Amipara",
+	"license": "ISC",
+	"dependencies": {
+		"@hapi/joi": "^17.1.0",
+		"@types/node": "^10.17.4",
+		"bcryptjs": "^2.4.3",
+		"body-parser": "^1.18.2",
+		"celebrate": "^13.0.3",
+		"cors": "^2.8.5",
+		"dotenv": "^5.0.1",
+		"ejs": "^3.0.1",
+		"express": "^4.17.1",
+		"mongoose": "^5.9.4",
+		"nodemon": "^1.19.4",
+		"path": "^0.12.7",
+		"redis": "^2.8.0",
+		"reflect-metadata": "^0.1.13",
+		"swagger-ui-express": "^4.1.2",
+		"typedi": "^0.8.0",
+		"winston": "^3.2.1"
+	},
+	"devDependencies": {
+		"@types/express": "^4.16.0",
+		"@types/mongoose": "^5.7.6",
+		"@types/node": "^10.14.8",
+		"@typescript-eslint/eslint-plugin": "^2.24.0",
+		"@typescript-eslint/parser": "^2.24.0",
+		"eslint": "^6.8.0",
+		"eslint-config-google": "^0.14.0",
+		"eslint-config-prettier": "^4.2.0",
+		"eslint-plugin-import": "^2.18.2",
+		"eslint-plugin-prettier": "^3.0.1",
+		"nyc": "^15.0.0",
+		"pre-commit": "^1.2.2",
+		"prettier": "^1.19.1",
+		"ts-node": "^7.0.1",
+		"tslint": "^5.20.1",
+		"typescript": "^3.7.2"
+	},
+	"directories": {
+		"test": "tests"
+	}
+}

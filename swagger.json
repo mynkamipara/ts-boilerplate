@@ -1,0 +1,147 @@
+{
+	"swagger": "2.0",
+	"info": {
+		"description": "This is swagger API docs which helps us to maintain consistent APIs",
+		"version": "1.1.5",
+		"title": "Mk5Code"
+	},
+	"host": "localhost:8080",
+	"basePath": "/",
+	"schemes": [
+		"http"
+	],
+	"tags": [
+		{
+			"name": "Local"
+		}
+	],
+	"paths": {
+		"/test": {
+			"get": {
+				"tags": [
+					"Local"
+				],
+				"summary": "Local APi Test",
+				"description": "",
+				"operationId": "",
+				"produces": [
+					"application/json"
+				],
+				"parameters": [],
+				"responses": {
+					"200": {
+						"description": "Successful Operation",
+						"schema": {
+							"$ref": "#/definitions/Countries"
+						}
+					},
+					"400": {
+						"description": "Bad request",
+						"schema": {
+							"$ref": "#/definitions/BadRequest"
+						}
+					},
+					"500": {
+						"description": "Server Error",
+						"schema": {
+							"$ref": "#/definitions/ServerError"
+						}
+					}
+				}
+			}
+		}
+	},
+	"securityDefinitions": {
+		"auth": {
+			"type": "apiKey",
+			"name": "auth",
+			"in": "header"
+		}
+	},
+	"definitions": {
+		"BadRequest": {
+			"type": "object",
+			"properties": {
+				"status": {
+					"type": "integer",
+					"format": "int64"
+				},
+				"message": {
+					"type": "string"
+				}
+			},
+			"example": {
+				"status": "400",
+				"message": "Error: Bad Request"
+			}
+		},
+		"ServerError": {
+			"type": "object",
+			"properties": {
+				"status": {
+					"type": "integer",
+					"format": "int64"
+				},
+				"message": {
+					"type": "string"
+				}
+			},
+			"example": {
+				"status": "500",
+				"message": "Error: Server failed"
+			}
+		},
+		"Countries": {
+			"type": "object",
+			"properties": {
+				"status": {
+					"type": "integer",
+					"format": "int64"
+				},
+				"message": {
+					"type": "string"
+				}
+			},
+			"example": {
+				"status": "200",
+				"message": "success"
+			}
+		},
+		"Login": {
+			"type": "object",
+			"properties": {
+				"status": {
+					"type": "integer",
+					"format": "int64"
+				},
+				"message": {
+					"type": "string"
+				},
+				"result": {
+					"type": "object",
+					"properties": {
+						"isnotification": {
+							"type": "int64"
+						},
+						"token": {
+							"type": "string"
+						},
+						"push_notifcation": {
+							"type": "int64"
+						},
+						"email_notification": {
+							"type": "int64"
+						}
+					}
+				}
+			},
+			"example": {
+				"status": 200,
+				"message": "Sucessfully LogIn",
+				"result": {
+					"token": "eyJhbGciOi2gO7ls"
+				}
+			}
+		}
+	}
+}
