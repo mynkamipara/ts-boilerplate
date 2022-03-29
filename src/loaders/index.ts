@@ -5,7 +5,7 @@ import dependencyInjector from './dependencyInjector';
 
 export default async ({ expressApp }) => {
 	// Establish a database connection for node's process
-	await connectDB();
+	// await connectDB();
 
 	// Load dependencies
 	dependencyInjector();
